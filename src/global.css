@@ -5,3 +5,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  @apply text-base text-textMuted-500 bg-white;
+}
+
+.sidebar-item-spacing {
+  @apply pl-5 pr-10;
+}
+
+.avatar.online:before {
+  top: unset;
+  bottom: 5%;
+  outline-width: 1px;
+  width: 15px;
+  height: 15px;
+}

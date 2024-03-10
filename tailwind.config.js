@@ -21,6 +21,14 @@ module.exports = {
           600: "#8E9ABB",
           700: "#8D8D8D",
         },
+        lightBlue: {
+          100: "#D6DFF6",
+          200: "#F0F3F4",
+        },
+        gray: {
+          100: "#E9EAF1",
+          200: "#E2E9FC",
+        },
       },
     },
   },
