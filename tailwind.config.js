@@ -20,6 +20,7 @@ module.exports = {
           500: "#212633",
           600: "#8E9ABB",
           700: "#8D8D8D",
+          800: "#989FC9",
         },
         lightBlue: {
           100: "#D6DFF6",
