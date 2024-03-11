@@ -20,6 +20,7 @@ const MessageBar = () => {
         <input
           type="text"
           className="bg-secondary w-full max-w-[490px] h-10 rounded-3xl p-4 text-sm placeholder:text-textMuted-800"
+          placeholder="Type your message..."
         />
         <button className="flex justify-center items-center bg-primary w-10 h-10 rounded-full">
           <SendIcon />
