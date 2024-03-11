@@ -1,4 +1,4 @@
-import { MessageBubble } from "../../../../@components";
+import { MessageBubble } from "../../../../components";
 
 const Preview = () => {
   return (
