@@ -1,6 +1,11 @@
+import { Files, Profile } from "./components";
+
 const UserProfile = () => {
   return (
-    <aside className="basis-1/4 h-screen overflow-y-auto">UserProfile</aside>
+    <aside className="basis-1/4 flex flex-col h-screen bg-white overflow-hidden">
+      <Profile />
+      <Files />
+    </aside>
   );
 };
 
