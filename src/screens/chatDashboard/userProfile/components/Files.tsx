@@ -31,35 +31,35 @@ const Files = () => {
           <li>
             <img
               src="/image1.png"
-              alt="image"
+              alt="image1"
               className="w-suto h-16 rounded-xl"
             />
           </li>
           <li>
             <img
               src="/image1.png"
-              alt="image"
+              alt="image1"
               className="w-suto h-16 rounded-xl"
             />
           </li>
           <li>
             <img
               src="/image1.png"
-              alt="image"
+              alt="image1"
               className="w-suto h-16 rounded-xl"
             />
           </li>
           <li>
             <img
               src="/image1.png"
-              alt="image"
+              alt="image1"
               className="w-suto h-16 rounded-xl"
             />
           </li>
           <li>
             <img
               src="/image1.png"
-              alt="image"
+              alt="image1"
               className="w-suto h-16 rounded-xl"
             />
           </li>

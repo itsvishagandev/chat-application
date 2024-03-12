@@ -9,7 +9,7 @@ const FileIcon = ({ width, height, fill }: TSvg) => {
       viewBox="0 0 20 20"
       fill="none"
     >
-      <g clip-path="url(#clip0_1_55)">
+      <g clipPath="url(#clip0_1_55)">
         <path
           d="M11.6667 2.5V5.83333C11.6667 6.05435 11.7545 6.26631 11.9108 6.42259C12.0671 6.57887 12.2791 6.66667 12.5001 6.66667H15.8334"
           stroke={fill || "#757575"}

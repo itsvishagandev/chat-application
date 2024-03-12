@@ -1,9 +1,9 @@
-import ChatDashBoardPage from "./pages/chatDashboard";
+import { AppRouter } from "./routes";
 
 function App() {
   return (
     <div className="App">
-      <ChatDashBoardPage />
+      <AppRouter />
     </div>
   );
 }
