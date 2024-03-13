@@ -1,6 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { IChat } from "../../lib/data/Types";
 import { getTime } from "../../utils";
+import {
+  getChatInitialData,
+  getChatInitialIds,
+} from "../../utils/getChatFromLocalStorage";
 
 export interface IInitialState {
   activeChatID: string;
@@ -10,8 +14,8 @@ export interface IInitialState {
 
 export const initialState: IInitialState = {
   activeChatID: "",
-  ids: [],
-  data: [],
+  ids: getChatInitialIds(),
+  data: getChatInitialData(),
 };
 
 const chatSlice = createSlice({
@@ -48,6 +52,18 @@ const chatSlice = createSlice({
         }
       }
     },
+    syncChat: (state, { payload }) => {
+      const { activeChatID, ids, data } = payload;
+      if (ids) {
+        state.ids = ids;
+      }
+      if (activeChatID) {
+        state.activeChatID = activeChatID;
+      }
+      if (data) {
+        state.data = data;
+      }
+    },
     setMessagesReaded: (state, { payload }) => {
       const { userID, chatID } = payload;
       const chatIndex = state.data.findIndex((chat) => chat.chatId === chatID);
@@ -58,6 +74,11 @@ const chatSlice = createSlice({
   },
 });
 
-export const { createChat, openChat, sendMessage, setMessagesReaded } =
-  chatSlice.actions;
+export const {
+  createChat,
+  openChat,
+  sendMessage,
+  syncChat,
+  setMessagesReaded,
+} = chatSlice.actions;
 export default chatSlice;

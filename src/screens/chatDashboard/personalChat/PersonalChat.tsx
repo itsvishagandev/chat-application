@@ -2,9 +2,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { Header, MessageBar, Preview } from "./components";
 import { AppDispatch, AppState } from "../../../store";
 import { getEndUserId } from "../../../utils";
-import { setMessagesReaded } from "../../../store/slices/chats";
+import { setMessagesReaded, syncChat } from "../../../store/slices/chats";
 import { useEffect } from "react";
 import DesktopIcon from "../../../assets/svg/DesktopIcon";
+import {
+  getChatInitialData,
+  getChatInitialIds,
+} from "../../../utils/getChatFromLocalStorage";
 
 export interface IProfile {
   name: string;
@@ -30,12 +34,36 @@ const PersonalChat = () => {
   useEffect(() => {
     if (activeChatID) {
       const payload = {
-        userID: user.id,
+        userID: endUserId,
         chatID: activeChatID,
       };
       dispatch(setMessagesReaded(payload));
     }
-  }, [activeChatID]);
+  }, [activeChatID, dispatch, endUserId]);
+
+  useEffect(() => {
+    localStorage.setItem("chatData", JSON.stringify(chats.data));
+    localStorage.setItem("chatIds", JSON.stringify(chats.ids));
+  }, [chats]);
+
+  // eslint-disable-next-line
+  const onStorageUpdate = (e: any) => {
+    const { key } = e;
+    if (key === "chatData") {
+      dispatch(syncChat({ data: getChatInitialData() }));
+    } else if (key === "chatIds") {
+      dispatch(syncChat({ ids: getChatInitialIds() }));
+    } else {
+      return false;
+    }
+  };
+
+  // useEffect(() => {
+  //   window.addEventListener("storage", onStorageUpdate);
+  //   return () => {
+  //     window.removeEventListener("storage", onStorageUpdate);
+  //   };
+  // }, []);
 
   return (
     <main className="flex-1 flex flex-col bg-secondary h-screen border-r border-l border-lightBlue-200 overflow-hidden">

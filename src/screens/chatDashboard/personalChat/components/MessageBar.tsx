@@ -27,7 +27,6 @@ const MessageBar = ({ userID, chatID, endUserID }: IMessage) => {
     };
     if (!!message) {
       dispatch(sendMessage(payload));
-      console.log("payload msg", payload);
       setMessage("");
     }
   };

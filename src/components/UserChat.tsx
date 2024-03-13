@@ -69,7 +69,6 @@ const UserChat = ({ data }: IUserChat) => {
   const previewChat = () => {
     const chatId = prevChatId(true);
     if (!chatId) {
-      console.log("payload==>", payload);
       dispatch(createChat(payload));
     } else {
       dispatch(openChat(chatId));
@@ -100,7 +99,7 @@ const UserChat = ({ data }: IUserChat) => {
           </p>
           {!!data?.profile?.unreadedMessageCount &&
             data?.profile?.unreadedMessageCount > 0 && (
-              <span className="flex justify-center items-center text-xs text-white bg-primary rounded-full px-0.5 aspect-square">
+              <span className="flex justify-center items-center min-w-4 text-xs text-white bg-primary rounded-full px-0.5 aspect-square">
                 {data?.profile?.unreadedMessageCount}
               </span>
             )}

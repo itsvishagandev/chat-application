@@ -2,10 +2,20 @@ import { IChat } from "../lib/data/Types";
 import { IInitialState } from "../store/slices/chats";
 import getEndUserId from "./getEndUserId";
 
-const filterUserChats = (chats: IInitialState, userID: number) => {
+const filterUserChats = (
+  chats: IInitialState,
+  userID: number,
+  additionalFilter?: string
+) => {
   return chats?.data?.reduce((filteredChats: any[], user: IChat) => {
-    if (user.chatId.includes(`${userID}`)) {
-      const EndUserID = getEndUserId(user.chatId, userID);
+    const EndUserID = getEndUserId(user.chatId, userID) || "";
+
+    const initialCheck =
+      additionalFilter === "unread"
+        ? user.chatId.includes(`${userID}`) &&
+          user.profile?.[EndUserID]?.unreadedMessageCount > 0
+        : user.chatId.includes(`${userID}`);
+    if (initialCheck) {
       if (EndUserID !== null && EndUserID !== undefined) {
         filteredChats.push({
           chatId: user.chatId,
