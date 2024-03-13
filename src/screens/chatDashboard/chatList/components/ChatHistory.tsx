@@ -1,6 +1,16 @@
+import { useSelector } from "react-redux";
 import { ChatList } from "../../../../components";
+import { AppState } from "../../../../store";
+import { filterUserChats } from "../../../../utils";
 
 const ChatHistory = () => {
+  const user = useSelector((state: AppState) => state.user);
+  const chats = useSelector((state: AppState) => state.chats);
+
+  const personalChats = filterUserChats(chats, user?.id);
+
+  console.log("personalChats", chats);
+
   return (
     <div className="flex-grow flex flex-col gap-5 h-full overflow-hidden">
       {/* Filter chats  */}
@@ -13,10 +23,10 @@ const ChatHistory = () => {
         </div>
       </div>
       <div className="flex flex-col gap-5 overflow-y-auto h-full sidebar-item-spacing">
-        {/* FAVORITES */}
-        <ChatList title="FAVORITES" />
         {/* CHATS */}
-        <ChatList title="CHATS" />
+        <ChatList usersData={personalChats} title="CHATS" />
+        {/* FAVORITES */}
+        <ChatList usersData={[]} title="FAVORITES" />
       </div>
     </div>
   );

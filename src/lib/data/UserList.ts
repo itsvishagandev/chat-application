@@ -4,6 +4,7 @@ const UserList = [
     profile: {
       name: "Vishagan",
       picture: "/image1.png",
+      isOnline: false,
     },
   },
   {
@@ -11,62 +12,71 @@ const UserList = [
     profile: {
       name: "John",
       picture: "/image2.png",
+      isOnline: false,
     },
   },
   {
     id: 303456,
     profile: {
       name: "Alice",
-      picture: "/image3.png",
+      picture: "/image1.png",
+      isOnline: false,
     },
   },
   {
     id: 489012,
     profile: {
       name: "Bob",
-      picture: "/image4.png",
+      picture: "/image2.png",
+      isOnline: false,
     },
   },
   {
     id: 550987,
     profile: {
       name: "Emily",
-      picture: "/image5.png",
+      picture: "/image1.png",
+      isOnline: false,
     },
   },
   {
     id: 698765,
     profile: {
       name: "David",
-      picture: "/image6.png",
+      picture: "/image2.png",
+      isOnline: false,
     },
   },
   {
     id: 701234,
     profile: {
       name: "Sarah",
-      picture: "/image7.png",
+      picture: "/image1.png",
+      isOnline: false,
     },
   },
   {
     id: 825678,
     profile: {
       name: "Michael",
-      picture: "/image8.png",
+      picture: "/image2.png",
+      isOnline: false,
     },
   },
   {
     id: 934567,
     profile: {
       name: "Emma",
-      picture: "/image9.png",
+      picture: "/image1.png",
+      isOnline: false,
     },
   },
   {
     id: 109876,
     profile: {
       name: "Oliver",
-      picture: "/image10.png",
+      picture: "/image2.png",
+      isOnline: false,
     },
   },
 ];

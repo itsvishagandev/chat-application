@@ -2,12 +2,14 @@ import { FileIcon, HelpIcon, SettingIcon } from "../../../../assets/svg";
 
 const Files = () => {
   return (
-    <div className="flex-1 p-7 h-full overflow-y-auto">
+    <div className="flex-1 p-7 h-full overflow-y-auto cursor-not-allowed">
       <div>
         <h5 className="text-base text-[#25396F] mb-2">Attachments</h5>
         <div className="flex justify-between items-center mb-3">
           <span className="text-xs text-textMuted-100">Source file</span>
-          <button className="text-[10px] text-[##454547]">View all</button>
+          <button className="text-[10px] text-[##454547] cursor-not-allowed">
+            View all
+          </button>
         </div>
         <ul>
           <li className="flex items-center gap-2 mb-3">
@@ -67,11 +69,11 @@ const Files = () => {
       </div>
       <div className="pt-7 pb-4">
         <ul className="flex flex-col gap-8">
-          <button className="flex items-center gap-4">
+          <button className="flex items-center gap-4 cursor-not-allowed">
             <HelpIcon />
             <p className="text-[##757575]">Help</p>
           </button>
-          <button className="flex items-center gap-4">
+          <button className="flex items-center gap-4 cursor-not-allowed">
             <SettingIcon />
             <p className="text-[##757575]">Settings</p>
           </button>
