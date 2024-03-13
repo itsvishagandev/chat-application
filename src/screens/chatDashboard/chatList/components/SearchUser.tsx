@@ -16,7 +16,7 @@ const SearchUser = () => {
         </div>
         <input
           type="text"
-          // value={UserSearch?.searchQuery}
+          value={UserSearch?.searchQuery}
           className="w-full text-sm font-normal border border-lightBlue-100 h-12 p-3 ps-11 rounded-lg placeholder:text-textMuted-600"
           placeholder="Search People..."
           onChange={(e) =>

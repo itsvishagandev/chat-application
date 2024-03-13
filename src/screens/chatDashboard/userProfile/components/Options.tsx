@@ -17,7 +17,7 @@ const Options = ({ endUserId }: { endUserId: string }) => {
       <div className="dropdown dropdown-bottom dropdown-end">
         <button
           tabIndex={0}
-          role="button"
+          // role="button"
           className="flex flex-col items-center gap-2"
         >
           <OptionIcon />
